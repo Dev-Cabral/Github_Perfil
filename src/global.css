@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+button, input {
+    margin: 2px;
+    padding: 2px;
+    justify-content: space-between;
+}
+
+
+
+button {
+    background-color: var(--corPrincipal);
+    color: var(--corSecundario);
+    margin-left: 2px;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    border: none;
+    padding-top: 8px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #3b849e
+}
+
+:root {
+    --corPrincipal: #3c6382;
+    --corSecundario: #f0eeee;
+}
