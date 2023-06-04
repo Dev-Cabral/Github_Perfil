@@ -5,6 +5,8 @@ import styles from './ReposList.module.css';
 const ReposList = ({nomeUsuario}) => {
     const [repos, setRepos] = useState([]);
     const [estacarregando, setEstacarregando] = useState(true);
+    const [erro, setErro] = useState(true);
+    
 
     useEffect(() => {
         setEstacarregando(true);
@@ -17,7 +19,11 @@ const ReposList = ({nomeUsuario}) => {
             }, 3000)
 
         })
-    }, [nomeUsuario])
+        .catch((e) => {
+            setErro(true);
+        })
+
+    }, [nomeUsuario,])
 
     return (
         <div className="container">
@@ -25,8 +31,8 @@ const ReposList = ({nomeUsuario}) => {
                 <h1>Carregando...</h1>
             ) : (
             <ul className={styles.list}>
-                {/* {repos.map(repositorio => ( */}
-                    {repos.map(({ id, name, language, html_url }) => (
+                    {repos.map(({ id, name, language, html_url, }) => (
+                        
                     <li className={styles.listItem} key={id}>
                         <div className={styles.itemName}>
                         <b>Nome:</b> 

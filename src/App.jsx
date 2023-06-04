@@ -8,8 +8,10 @@ const [nomeUsuario, setNomeUsuario ] = useState ('');
 
   return (
     <>
-    <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
-    <button type="button">Entrar</button>
+    <form >
+    <input type="text" required placeholder="Digite seu usuário" onBlur={(e) => setNomeUsuario(e.target.value)} />
+    <button  onClick={(e) => e.preventDefault(e)} type="submit">Entrar</button>
+    </form>
 
     {nomeUsuario.length > 4 && (
       <>
